@@ -1,15 +1,19 @@
 import React from 'react';
-import { SafeAreaView, View, ScrollView, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Menu from '../components/Menu';
+import ShelterList from '../components/ShelterList';
+import {
+  SafeAreaView
+} from 'react-native-safe-area-context';
 
 const Index = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scroll}>
-        
-      </ScrollView>
+      <View style={styles.content}>
+        <ShelterList />
+      </View>
 
-      <View>
+      <View style={styles.menu}>
         <Menu />
       </View>
     </SafeAreaView>
@@ -21,14 +25,21 @@ export default Index;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
   },
-  scroll: {
-    padding: 20,
+  content: {
+    flex: 1,
+    paddingBottom: 70,
   },
   menu: {
-    padding: 10,
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 70,
     backgroundColor: '#fff',
     borderTopWidth: 1,
     borderColor: '#ccc',
+    justifyContent: 'center',
   },
 });

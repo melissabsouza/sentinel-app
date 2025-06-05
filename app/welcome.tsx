@@ -1,7 +1,6 @@
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { useFonts } from '@expo-google-fonts/rubik/useFonts';
-
 import { Rubik_600SemiBold } from '@expo-google-fonts/rubik/600SemiBold';
 import { Rubik_500Medium } from '@expo-google-fonts/rubik/500Medium';
 import { useRouter } from 'expo-router';
@@ -9,7 +8,6 @@ import { useRouter } from 'expo-router';
 
 const welcomeImg = require("../assets/images/welcome.png")
 const arrow = require("../assets/images/arrow.png")
-
 
 const WelcomeScreen = () => {
     const router = useRouter();
