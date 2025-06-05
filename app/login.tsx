@@ -1,12 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import LoginForm from "../components/LoginForm";
+import { useRouter } from "expo-router";
+import {
+  SafeAreaView
+} from 'react-native-safe-area-context';
 
-const login = () => {
+const Login = () => {
+  const router = useRouter();
+
   return (
-    <View>
-      <Text>login</Text>
-    </View>
-  )
-}
+      <SafeAreaView style={{ flex: 1}}>
+        <LoginForm onSuccess={() => router.replace("/")} />
+      </SafeAreaView>
+  );
+};
 
-export default login
+export default Login;

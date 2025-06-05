@@ -1,6 +1,5 @@
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { StatusBar } from 'expo-status-bar';
 import { useFonts } from '@expo-google-fonts/rubik/useFonts';
 
 import { Rubik_600SemiBold } from '@expo-google-fonts/rubik/600SemiBold';
@@ -32,8 +31,6 @@ const WelcomeScreen = () => {
                 <Image source={arrow} style={styles.svg}></Image>
             </TouchableOpacity>
         </View>
-
-        <StatusBar style="dark"/>
         </View>
   )
 }
