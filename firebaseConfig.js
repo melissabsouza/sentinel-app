@@ -3,13 +3,12 @@ import { initializeAuth, getReactNativePersistence } from "firebase/auth";
 import ReactNativeAsyncStorage from "@react-native-async-storage/async-storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA1OXGYilEyL4qva0-x9ekk1ENejegByT4",
-  authDomain: "sentinel-app-gs.firebaseapp.com",
-  projectId: "sentinel-app-gs",
-  storageBucket: "sentinel-app-gs.firebasestorage.app",
-  messagingSenderId: "717379664356",
-  appId: "1:717379664356:web:ee8164644b370b9fe96ff1",
-  measurementId: "G-8Z01X8NEY8"
+  apiKey: "AIzaSyAmt5K2h49NnE2c_w7pS8OBloBfc7B675Q",
+  authDomain: "sentinel-app-468e1.firebaseapp.com",
+  projectId: "sentinel-app-468e1",
+  storageBucket: "sentinel-app-468e1.firebasestorage.app",
+  messagingSenderId: "541619298877",
+  appId: "1:541619298877:web:a8586f70c244ced3184054"
 };
 
 const app = initializeApp(firebaseConfig);
