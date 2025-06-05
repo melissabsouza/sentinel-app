@@ -10,7 +10,7 @@ const Login = () => {
   const router = useRouter();
   return (
     <SafeAreaView style={{ flex: 1}}>
-        <SignInForm onSuccess={() => router.replace("/login")} />
+        <SignInForm onSuccess={() => router.replace("/")} />
       </SafeAreaView>
   )
 }
