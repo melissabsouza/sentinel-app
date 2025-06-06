@@ -43,6 +43,7 @@ function RootLayoutNav() {
         <Stack.Screen name="login" options={{ headerShown: false }} />
         <Stack.Screen name="signin" options={{ headerShown: false }} />
         <Stack.Screen name="home" options={{ headerShown: false }} />
+        <Stack.Screen name="edit/[id]" options={{ headerShown: false }} />
       </Stack>
       <StatusBar style="dark"/>
     </QueryClientProvider>
