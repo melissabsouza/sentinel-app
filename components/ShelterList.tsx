@@ -7,8 +7,10 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Rubik_600SemiBold } from '@expo-google-fonts/rubik/600SemiBold';
 import { Rubik_500Medium } from '@expo-google-fonts/rubik/500Medium';
 import { useFonts } from "expo-font";
+import { useRouter } from "expo-router";
 
 export const ShelterList = () => {
+    const router = useRouter()
     const [fontsLoaded] = useFonts({
             Rubik_600SemiBold,
             Rubik_500Medium
@@ -85,7 +87,6 @@ export const ShelterList = () => {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => deleteMutation.mutate(item.id)}
                     style={{ padding: 8 }}
                 >
                     <Ionicons name="pencil" size={24} color="#424242" />

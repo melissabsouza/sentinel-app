@@ -35,7 +35,6 @@ const ShelterForm: React.FC<ShelterFormProps> = ({ initialValues, onSubmit }) =>
   if (field.includes('.')) {
     const [parent, child] = field.split('.');
     setForm((prev) => {
-      // garante que prev existe e que prev[parent] é um objeto
       const parentValue = (prev?.[parent as keyof ShelterFormValues] ?? {}) as Record<string, any>;
 
       return {

@@ -19,10 +19,12 @@ export const shelterService = {
     return data;
   },
 
-  update: async (id: number, shelter: Partial<Shelter>): Promise<Shelter> => {
+  
+  updateById: async (id: number, shelter: Partial<Shelter>): Promise<Shelter> => {
     const { data } = await apiClient.put<Shelter>(`/api/${RESOURCE}/update/${id}`, shelter);
     return data;
   },
+
 
   deleteById: async (id: number): Promise<void> => {
     await apiClient.delete(`/api/${RESOURCE}/delete/${id}`);
