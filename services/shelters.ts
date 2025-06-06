@@ -1,5 +1,5 @@
 import { apiClient } from "./api";
-import { Shelter } from "../types/Shelter";
+import { Shelter, ShelterCreateInput } from "../types/Shelter";
 
 const RESOURCE = "shelters";
 
@@ -14,7 +14,7 @@ export const shelterService = {
     return data;
   },
 
-  create: async (shelter: Omit<Shelter, "id">): Promise<Shelter> => {
+  create: async (shelter: ShelterCreateInput): Promise<Shelter> => {
     const { data } = await apiClient.post<Shelter>(`/api/${RESOURCE}`, shelter);
     return data;
   },

@@ -26,3 +26,10 @@ export type Shelter = {
   contact: Contact;
   userEmail: string;
 };
+
+export type ShelterFormValues = Omit<Shelter, 'id' | 'lastUpdate'> & {
+  address: Omit<Address, 'id'>;
+  contact: Omit<Contact, 'id'>;
+};
+
+ export type ShelterCreateInput = Omit<Shelter, 'id' | 'lastUpdate'>;
