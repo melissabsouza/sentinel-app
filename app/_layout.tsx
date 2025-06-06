@@ -38,7 +38,12 @@ function RootLayoutNav() {
   return (
     <AuthProvider>
     <QueryClientProvider client={queryClient}>
-      <Stack screenOptions={{ headerShown: false }}/>
+    <Stack>
+        <Stack.Screen name="welcome" options={{ headerShown: false }} />
+        <Stack.Screen name="login" options={{ headerShown: false }} />
+        <Stack.Screen name="signin" options={{ headerShown: false }} />
+        <Stack.Screen name="home" options={{ headerShown: false }} />
+      </Stack>
       <StatusBar style="dark"/>
     </QueryClientProvider>
     </AuthProvider>

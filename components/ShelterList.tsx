@@ -10,6 +10,7 @@ import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
 
 export const ShelterList = () => {
+
     const router = useRouter()
     const [fontsLoaded] = useFonts({
             Rubik_600SemiBold,
@@ -27,6 +28,7 @@ export const ShelterList = () => {
   });
 
   if (isLoading) return <ActivityIndicator size="large" color="#ffdb58" />;
+
 
   return (
     <FlatList
@@ -86,10 +88,12 @@ export const ShelterList = () => {
                     <Ionicons name="trash-outline" size={24} color="red" />
                 </TouchableOpacity>
 
+
                 <TouchableOpacity
-                    style={{ padding: 8 }}
-                >
-                    <Ionicons name="pencil" size={24} color="#424242" />
+                style={{ padding: 8 }}
+                onPress={() => router.push({ pathname: "/edit/[id]", params: { id: item.id.toString() } })}
+              >
+                <Ionicons name="pencil" size={24} color="#424242" />
                 </TouchableOpacity>
           </View >
         </View>

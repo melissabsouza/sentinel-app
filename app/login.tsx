@@ -9,7 +9,7 @@ const Login = () => {
 
   return (
       <SafeAreaView style={{ flex: 1}}>
-        <LoginForm onSuccess={() => router.replace("/")} />
+        <LoginForm onSuccess={() => router.replace("/home")} />
       </SafeAreaView>
   );
 };

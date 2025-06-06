@@ -4,6 +4,9 @@ import { auth } from '@/firebaseConfig';
 import { useRouter } from 'expo-router';
 import { signOut } from 'firebase/auth';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { getAuth } from 'firebase/auth';
+
+const firebaseAuth = getAuth();
 
 export default function Menu() {
      const router = useRouter();
@@ -14,19 +17,21 @@ export default function Menu() {
         <Ionicons name='add-circle-outline' color='#484C52' size={20}></Ionicons>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => router.push('/')}>
+      <TouchableOpacity style={styles.button} onPress={() => router.push('/home')}>
         <Ionicons name='home-outline' color='#484C52' size={20}></Ionicons>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.button} onPress={() => router.push('/')}>
+      <TouchableOpacity style={styles.button} onPress={() => router.push('/home')}>
         <Ionicons name='person-outline' color='#484C52' size={20}></Ionicons>
       </TouchableOpacity>
 
       <TouchableOpacity style={[styles.button, styles.logout]}
       onPress={async () => {
             try {
+            console.log(firebaseAuth.currentUser);
             await signOut(auth);
-            router.replace('/welcome');
+            router.replace('/login');
+            console.log('usuario deslogado:');
             } catch (error) {
             console.log('Erro ao deslogar:', error);
             }
