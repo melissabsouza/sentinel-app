@@ -6,7 +6,7 @@ import {
   SafeAreaView
 } from 'react-native-safe-area-context';
 
-const Index = () => {
+const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -20,7 +20,7 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Home;
 
 const styles = StyleSheet.create({
   container: {
