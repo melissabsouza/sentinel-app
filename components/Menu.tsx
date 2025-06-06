@@ -30,7 +30,7 @@ export default function Menu() {
             try {
             console.log(firebaseAuth.currentUser);
             await signOut(auth);
-            router.replace('/login');
+            router.replace('/welcome');
             console.log('usuario deslogado:');
             } catch (error) {
             console.log('Erro ao deslogar:', error);
