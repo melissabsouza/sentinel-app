@@ -90,7 +90,7 @@ const ProfileScreen = () => {
         <View style={styles.avatarContainer}>
           <Ionicons
             name="person-circle"
-            size={100}
+            size={140}
             color="#4AB64A"
           />
         </View>
@@ -149,17 +149,6 @@ const ProfileScreen = () => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.editButton}>
-          <Ionicons
-            name="create"
-            size={20}
-            color="#4AB64A"
-          />
-          <Text style={styles.editButtonText}>
-            Editar Perfil
-          </Text>
-        </TouchableOpacity>
-
         <TouchableOpacity
           style={styles.logoutButton}
           onPress={handleLogout}>

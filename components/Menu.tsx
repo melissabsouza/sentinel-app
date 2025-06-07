@@ -44,24 +44,6 @@ export default function Menu() {
           color="#484C52"
           size={20}></Ionicons>
       </TouchableOpacity>
-
-      <TouchableOpacity
-        style={[styles.button, styles.logout]}
-        onPress={async () => {
-          try {
-            console.log(firebaseAuth.currentUser);
-            await signOut(auth);
-            router.replace("/welcome");
-            console.log("usuario deslogado:");
-          } catch (error) {
-            console.log("Erro ao deslogar:", error);
-          }
-        }}>
-        <Ionicons
-          name="log-out-outline"
-          color="#484C52"
-          size={20}></Ionicons>
-      </TouchableOpacity>
     </View>
   );
 }
@@ -80,7 +62,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   button: {
-    paddingVertical: 12,
+    paddingVertical: 11,
     paddingHorizontal: 12,
     marginBottom: 10,
     backgroundColor: "#eee",
