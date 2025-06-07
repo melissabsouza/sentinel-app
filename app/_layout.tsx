@@ -3,7 +3,10 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
 import "react-native-reanimated";
 import "./../global.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firebaseConfig";
 import AuthProvider from "@/components/AuthProvider";
@@ -34,11 +37,34 @@ function RootLayoutNav() {
     <AuthProvider>
       <QueryClientProvider client={queryClient}>
         <Stack>
-          <Stack.Screen name="welcome" options={{ headerShown: false }} />
-          <Stack.Screen name="login" options={{ headerShown: false }} />
-          <Stack.Screen name="signup" options={{ headerShown: false }} />
-          <Stack.Screen name="home" options={{ headerShown: false }} />
-          <Stack.Screen name="edit/[id]" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="welcome"
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="login"
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="signup"
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="home"
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="profile"
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="add"
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="edit/[id]"
+            options={{ headerShown: false }}
+          />
         </Stack>
         <StatusBar style="dark" />
       </QueryClientProvider>
