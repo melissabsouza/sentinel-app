@@ -51,7 +51,7 @@ const ProfilePage = () => {
           onPress: async () => {
             try {
               await signOut(auth);
-              router.replace("/login");
+              router.replace("/welcome");
             } catch (error) {
               console.error("Erro ao fazer logout:", error);
               Alert.alert(
