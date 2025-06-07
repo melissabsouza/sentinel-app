@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   TextInput,
-  Button,
   StyleSheet,
   Text,
   ScrollView,

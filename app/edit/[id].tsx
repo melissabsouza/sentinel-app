@@ -1,15 +1,13 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import EditShelterScreen from '../../components/EditShelterScreen'
+import { SafeAreaView } from "react-native";
+import React from "react";
+import EditShelterScreen from "../../components/EditShelterScreen";
 
 const Edit = () => {
   return (
-    <SafeAreaView style={{ flex: 1}}>
-      <EditShelterScreen/>
+    <SafeAreaView style={{ flex: 1 }}>
+      <EditShelterScreen />
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default Edit
-
-const styles = StyleSheet.create({})
+export default Edit;

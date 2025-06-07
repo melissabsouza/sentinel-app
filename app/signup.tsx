@@ -1,10 +1,7 @@
-import React from 'react'
-import SignUpForm from '@/components/SignUpForm'
-import {
-  SafeAreaView
-} from 'react-native-safe-area-context';
-import { useRouter } from 'expo-router';
-
+import React from "react";
+import SignUpForm from "@/components/SignUpForm";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useRouter } from "expo-router";
 
 const SignUp = () => {
   const router = useRouter();
@@ -13,10 +10,10 @@ const SignUp = () => {
     router.replace("/home");
   };
   return (
-    <SafeAreaView style={{ flex: 1}}>
-        <SignUpForm onSuccess={replaceSignUpScreen} />
-      </SafeAreaView>
-  )
-}
+    <SafeAreaView style={{ flex: 1 }}>
+      <SignUpForm onSuccess={replaceSignUpScreen} />
+    </SafeAreaView>
+  );
+};
 
-export default SignUp
+export default SignUp;

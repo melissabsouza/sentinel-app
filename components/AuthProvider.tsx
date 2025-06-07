@@ -1,4 +1,8 @@
-import { PropsWithChildren, useEffect, useState } from "react";
+import {
+  PropsWithChildren,
+  useEffect,
+  useState,
+} from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firebaseConfig";
@@ -27,7 +31,11 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
     userId,
   };
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
 export default AuthProvider;
