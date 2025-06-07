@@ -15,7 +15,7 @@ import { useFonts } from "expo-font";
 import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 
-const ProfileScreen = () => {
+const ProfilePage = () => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const router = useRouter();
@@ -85,13 +85,24 @@ const ProfileScreen = () => {
 
   return (
     <View style={styles.container}>
+      {/* Back Button */}
+      <TouchableOpacity
+        style={styles.backButton}
+        onPress={() => router.back()}>
+        <Ionicons
+          name="arrow-back"
+          size={24}
+          color="#424242"
+        />
+      </TouchableOpacity>
+
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.avatarContainer}>
           <Ionicons
             name="person-circle"
             size={140}
-            color="#4AB64A"
+            color="#ffdb58"
           />
         </View>
         <Text style={styles.welcomeText}>Meu Perfil</Text>
@@ -104,7 +115,7 @@ const ProfileScreen = () => {
             <Ionicons
               name="person"
               size={20}
-              color="#4AB64A"
+              color="#ffdb58"
             />
             <Text style={styles.cardTitle}>Nome</Text>
           </View>
@@ -118,7 +129,7 @@ const ProfileScreen = () => {
             <Ionicons
               name="mail"
               size={20}
-              color="#4AB64A"
+              color="#ffdb58"
             />
             <Text style={styles.cardTitle}>E-mail</Text>
           </View>
@@ -132,7 +143,7 @@ const ProfileScreen = () => {
             <Ionicons
               name="calendar"
               size={20}
-              color="#4AB64A"
+              color="#ffdb58"
             />
             <Text style={styles.cardTitle}>
               Membro desde
@@ -148,6 +159,7 @@ const ProfileScreen = () => {
         </View>
       </View>
 
+      {/* Action Buttons */}
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.logoutButton}
@@ -162,7 +174,7 @@ const ProfileScreen = () => {
   );
 };
 
-export default ProfileScreen;
+export default ProfilePage;
 
 const styles = StyleSheet.create({
   container: {
@@ -175,6 +187,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#f8f9fa",
+  },
+  backButton: {
+    position: "absolute",
+    top: 50,
+    left: 20,
+    zIndex: 1,
+    padding: 8,
   },
   header: {
     alignItems: "center",
@@ -234,7 +253,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#fff",
     borderWidth: 2,
-    borderColor: "#4AB64A",
+    borderColor: "#ffdb58",
     borderRadius: 12,
     padding: 16,
     marginBottom: 12,
@@ -242,14 +261,14 @@ const styles = StyleSheet.create({
   editButtonText: {
     fontFamily: "Rubik_500Medium",
     fontSize: 16,
-    color: "#4AB64A",
+    color: "#ffdb58",
     marginLeft: 8,
   },
   logoutButton: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#dc3545",
+    backgroundColor: "#dc8335",
     borderRadius: 12,
     padding: 16,
   },

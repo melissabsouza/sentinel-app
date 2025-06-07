@@ -5,9 +5,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 const Profile = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <ProfileScreen />
-    </SafeAreaView>
+    // <SafeAreaView style={{ flex: 1 }}>
+    <ProfileScreen />
+    // </SafeAreaView>
   );
 };
 
