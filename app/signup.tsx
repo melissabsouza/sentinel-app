@@ -8,9 +8,13 @@ import { useRouter } from 'expo-router';
 
 const SignUp = () => {
   const router = useRouter();
+  const replaceSignUpScreen = () => {
+    router.dismissAll();
+    router.replace("/home");
+  };
   return (
     <SafeAreaView style={{ flex: 1}}>
-        <SignUpForm onSuccess={() => router.replace("/home")} />
+        <SignUpForm onSuccess={replaceSignUpScreen} />
       </SafeAreaView>
   )
 }

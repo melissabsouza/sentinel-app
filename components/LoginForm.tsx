@@ -115,7 +115,7 @@ const LoginForm = ({ onSuccess }: Props) => {
 
       <Text style={styles.textlog}>
         Não tem uma conta?
-        <Link href="/signin" style={{ color: '#4AB64A' }}>
+        <Link href="/signup" style={{ color: '#4AB64A' }}>
           {' '}Registrar
         </Link>
       </Text>

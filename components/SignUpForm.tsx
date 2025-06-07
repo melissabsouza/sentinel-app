@@ -4,7 +4,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import SignLoginTextInput from '@/components/SignLoginTextInput';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../firebaseConfig";
 import { useForm } from 'react-hook-form';
 import PrimaryButton from '@/components/PrimaryButton';
@@ -18,13 +18,14 @@ type Props = {
 };
 
 const SignUpSchema = z.object({
+  name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres").max(50, "Nome muito longo"),
   email: z.string().email("Email inválido").min(1, "Email é obrigatório"),
   password: z.string().min(6, "Senha precisa ter pelo menos 6 caracteres"),
 });
 
 type SignUpFormData = z.infer<typeof SignUpSchema>;
 
-const SignInForm = ({ onSuccess }: Props) => {
+const SignUpForm = ({ onSuccess }: Props) => {
 
   const [fontsLoaded] = useFonts({
     Rubik_400Regular,
@@ -33,6 +34,7 @@ const SignInForm = ({ onSuccess }: Props) => {
 
   const { control, handleSubmit } = useForm<SignUpFormData>({
     defaultValues: {
+      name: "",
       email: "",
       password: "",
     },
@@ -40,8 +42,13 @@ const SignInForm = ({ onSuccess }: Props) => {
   });
 
   const { isPending, mutate, error } = useMutation({
-    mutationFn: async ({ email, password }: SignUpFormData) => {
+    mutationFn: async ({ name, email, password }: SignUpFormData) => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+      await updateProfile(userCredential.user, {
+        displayName: name,
+      });
+      
       return userCredential;
     },
     onSuccess: () => {
@@ -56,13 +63,21 @@ const SignInForm = ({ onSuccess }: Props) => {
   return (
     <View style={styles.container}>
       <View style={styles.title}>
-        <Text style={styles.text}>Sign In</Text>
+        <Text style={styles.text}>Sign Up</Text>
         <View style={styles.underline} />
       </View>
 
       <View>
         {isPending && <ActivityIndicator size="large" color="#36c32c" />}
         {error && <Text style={styles.error}>{error.message}</Text>}
+
+        <SignLoginTextInput
+          label='Nome'
+          name="name"
+          iconName='person-outline'
+          control={control}
+          placeholder='Digite seu nome'
+        />
 
         <SignLoginTextInput
           label='E-mail'
@@ -100,7 +115,7 @@ const SignInForm = ({ onSuccess }: Props) => {
   );
 };
 
-export default SignInForm;
+export default SignUpForm;
 
 const styles = StyleSheet.create({
   container: {
