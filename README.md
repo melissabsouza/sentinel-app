@@ -11,6 +11,9 @@
 
 ---
 
+#📹 Video
+
+
 # 🏠 Sentinel
 
 **Sentinel** é uma plataforma digital que conecta pessoas afetadas por desastres naturais a abrigos seguros. O nome vem de "sentinela" - um guardião que vigia e protege. Durante emergências, o Sentinel atua como um **guardião digital**, oferecendo informações atualizadas sobre locais de acolhimento temporário.
