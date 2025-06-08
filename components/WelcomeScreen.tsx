@@ -33,7 +33,7 @@ const WelcomeScreen = () => {
       </Text>
 
       <View style={styles.continue}>
-        <Text style={styles.subtitle}>Continuar</Text>
+        <Text style={styles.subtitle}>Continuar </Text>
         <TouchableOpacity
           onPress={() => router.push("/login")}>
           <Image source={arrow} style={styles.svg}></Image>
@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
   continue: {
     flexDirection: "row",
     alignSelf: "flex-end",
-    gap: 15,
     justifyContent: "center",
     alignItems: "center",
     paddingRight: 20,
@@ -71,6 +70,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.2,
     lineHeight: 20,
     fontFamily: "Rubik_500Medium",
+    marginRight: 10,
   },
   svg: {
     width: 33,
